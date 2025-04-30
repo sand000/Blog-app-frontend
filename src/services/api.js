@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/api";
+const BASE_URL = "https://blog-app-backend-vjwy.onrender.com/api";
 
 console.log("Base URL:", BASE_URL);
 

@@ -10,7 +10,7 @@ export default function Home() {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/post/posts", {
+      const res = await axios.get("https://blog-app-backend-vjwy.onrender.com/api/post/posts", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPosts(res.data);
@@ -21,10 +21,10 @@ export default function Home() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/post/posts/${id}`, {
+      await axios.delete(`https://blog-app-backend-vjwy.onrender.com/api/post/posts/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      fetchPosts(); 
+      fetchPosts();
     } catch (err) {
       console.error("Failed to delete post:", err.response?.data || err.message);
     }
@@ -41,11 +41,11 @@ export default function Home() {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:8080/api/post/posts/${editPostId}`, editForm, {
+      await axios.put(`https://blog-app-backend-vjwy.onrender.com/api/post/posts/${editPostId}`, editForm, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setEditPostId(null);
-      fetchPosts(); 
+      fetchPosts();
     } catch (err) {
       console.error("Failed to update post:", err.response?.data || err.message);
     }

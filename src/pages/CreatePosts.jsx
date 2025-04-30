@@ -15,7 +15,7 @@ export default function CreatePost() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:8080/api/post/createPost", formData, {
+      const res = await axios.post("https://blog-app-backend-vjwy.onrender.com/api/post/createPost", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
